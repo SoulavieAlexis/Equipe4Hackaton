@@ -175,7 +175,6 @@ function start($servername,$username,$password,$name){
 function bddInsert($bdd,$table,$value){
     
     $atribut ="";
-    
     $reponse=$bdd->query("SHOW COLUMNS FROM $table");
     while($donnees = $reponse->fetch(PDO::FETCH_ASSOC))
     {
@@ -190,7 +189,6 @@ function bddInsert($bdd,$table,$value){
     $stmt->execute();
     $resultat = $stmt->fetch();
     $stmt->closeCursor();
-
 }
 
 function bddInsertExt($bdd,$table,$atribut,$value){
